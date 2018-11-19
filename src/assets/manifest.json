@@ -1,0 +1,20 @@
+{
+  "name": "",
+  "version": "0.1",
+  "description": "Better github search",
+  "manifest_version": 2,
+  "icons": {
+    "64": "cloud-computing.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "64": "cloud-computing.png"
+    },
+    "default_title": "",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ]
+}
