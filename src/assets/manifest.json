@@ -1,7 +1,10 @@
 {
-  "name": "",
+  "name": "Github monorepo search",
   "version": "0.1",
-  "description": "Better github search",
+  "description": "Github monorepo search",
+  "omnibox": {
+    "keyword": "gh"
+  },
   "manifest_version": 2,
   "icons": {
     "64": "cloud-computing.png"
@@ -17,6 +20,10 @@
     "activeTab",
     "tabs"
   ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {

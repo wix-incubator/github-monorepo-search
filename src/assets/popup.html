@@ -2,12 +2,61 @@
 <html>
 
 <head>
+  <style>
+    html * {
+      box-sizing: border-box;
+    }
+    body {
+      width: 300px;
+    }
+
+    .container {
+      line-height: 36px;
+      border-radius: 18px;
+      color: #162D3D;
+      border: solid 2px #C1E4FE;
+      display: flex;
+      padding: 6px;
+    }
+
+    .container input {
+      flex: 1;
+      border: 0;
+      font-size: 16px;
+      color: #162D3D;
+    }
+    
+    .container input:focus {
+      outline: none;
+    }
+
+    .container input:-webkit-autofill,
+    .container input:-webkit-autofill:focus,
+    .container input:-webkit-autofill:hover
+     {
+      box-shadow: 0 0 0px 1000px #fff inset;
+    }
+
+    .container input::placeholder {
+      color: #cecbcb67;
+    }
+
+    .search-icon {
+      margin-right: 6px;
+    }
+
+  </style>
 </head>
 
 <body>
-    <form class="main-form">
-        <input type="text" name="searchString" autofocus>
-    </form>
+  <form class="main-form">
+    <div class="container">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+        <path d="M18 11.5a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0zm-14 0a7.5 7.5 0 1 1 15 0 7.5 7.5 0 0 1-15 0zm13.354 5.146l4 4-.708.708-4-4 .708-.708z"></path>
+      </svg>
+      <input placeholder="someFunctionName()" type="text" name="searchString" autofocus>
+    </div>
+  </form>
 </body>
 
 </html>
