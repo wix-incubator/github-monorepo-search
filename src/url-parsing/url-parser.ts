@@ -1,15 +1,17 @@
-// https:// github.com/wix-platform/wix-node-platform/tree/fea76b2c139805cd6984e52a99a30bc9720d81bb/bootstrap-plugins/grpc/wix-bootstrap-grpc
-// https:// github.com/wix-platform/wix-node-platform/tree/master/config/wix-config
-interface ParsedUrl {
+export interface ParsedUrl {
   org: string;
   repo: string;
+  path: string;
 }
-// https://github.com/wix-platform/wix-node-platform/tree/master/config/wix-config
-const regex = /https:\/\/github.com\/([\w-]*)\/([\w-]*)\/.*/
-export const parseUrl = (url: string): ParsedUrl => { 
-  const match = regex.exec(url);
+
+const regex = /https:\/\/github\.com\/([\w-]*)\/?([\w-\.]*)?(?:\/(tree|blob)\/\w*\/)?(.*)?/;
+
+export const parseUrl = (url: string): ParsedUrl => {
+  const match = regex.exec(url) || [];
+  const path = match[3] === 'blob' ? (match[4] as string).split('/').slice(0, -1).join('/') : match[4];
   return {
-    org: match[1],
-    repo: match[2]
-  }
-}
+    org: match[1] || null,
+    repo: match[2] || null,
+    path: path || null,
+  };
+};

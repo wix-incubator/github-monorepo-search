@@ -10,7 +10,7 @@ const configuration = {
   mode: 'development',
   entry: {
     popup: path.resolve('.', 'src', 'popup.ts'),
-    // content: path.resolve('.', 'src', 'content.ts'),
+    background: path.resolve('.', 'src', 'background.ts'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

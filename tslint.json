@@ -10,6 +10,8 @@
       "log"
     ],
     "trailing-comma": true,
-    "interface-name": false
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "semicolon": true
   }
 }

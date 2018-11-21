@@ -6,7 +6,7 @@
   "icons": {
     "64": "cloud-computing.png"
   },
-  "page_action": {
+  "browser_action": {
     "default_icon": {
       "64": "cloud-computing.png"
     },
@@ -16,5 +16,12 @@
   "permissions": [
     "activeTab",
     "tabs"
-  ]
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U"
+      }
+    }
+  }
 }
